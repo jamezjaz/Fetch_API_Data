@@ -1,4 +1,5 @@
 import React from 'react'
+import dataStyles from '../styles/dataStyles.module.css';
 
 class Data extends React.Component {
   constructor(props) {
@@ -33,15 +34,14 @@ class Data extends React.Component {
         return(
         <div>
             <h2>Return something</h2>
-            <ul>
             {items.data.map(item => (
-            <li key={item.id}>
-                <p>{item.first_name}</p>
-                <p>{item.last_name}</p>
-                <p>{item.email}</p>
-            </li>
+                <div>
+                  <img src={item.avatar} className={dataStyles.img} alt={item.first_name} />
+                  <p>{item.first_name}</p>
+                  <p>{item.last_name}</p>
+                  <p>{item.email}</p>
+                </div>
             ))}
-            </ul>
         </div>
         );
     }
